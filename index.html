@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manga Website</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .background-cover {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('relaxing-anime-girl.gif'); /* Replace 'background.jpg' with your actual background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+        
+        .cover1-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(128, 128, 128, 0.5); /* Gray shadow color with transparency */
+            z-index: -1;
+        }
+        
+        .manga div {
+            margin: 0 10px;
+            position: relative; /* Add position relative to cover 1 div */
+        }
+
+        .manga-cover {
+            max-width: 100%;
+            height: auto;
+            position: relative; /* Add position relative to cover 1 image */
+            z-index: 1; /* Set z-index higher to be on top of cover 1 background */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to cover 1 */
+            transition: transform 0.2s;
+        }
+
+        .manga-cover:hover {
+            transform: scale(1.05); /* Scale up cover 1 image on hover for a subtle effect */
+            cursor: pointer; /* Change cursor to pointer on hover */
+        }
+
+        .manga-title {
+            text-align: center;
+            font-size: 24px; /* Increased font size for the manga title */
+            font-weight: bold; /* Added bold font weight to make the title stand out */
+            color: #fff; /* Set text color to white */
+            background-color: rgba(0, 0, 0, 0.7); /* Add a dark background color to the title with some transparency */
+            padding: 10px; /* Added padding to the title for better visibility */
+            border-radius: 5px; /* Added border radius for a rounded look */
+        }
+
+        @media only screen and (max-width: 768px) {
+            .manga {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-cover"></div>
+    <div class="cover1-background"></div>
+    <header>
+        <h1>THE AMAZING WORLD OF STORIES</h1>
+    </header>
+    <div class="manga">
+        <div onclick="window.location.href='SCP_STORIES_FOR_KIDS/chapter1.html'">
+            <img src="cover1.jpg" alt="Manga 1 Cover" class="manga-cover">
+            <div class="manga-title" id="SCP_STORIES_FOR_KIDS">SCP STORIES FOR KIDS</div>
+        </div>
+        <div onclick="window.location.href='STICK_MAN_STORY/chapter1.html'">
+            <img src="cover2.jpg" alt="Manga 2 Cover" class="manga-cover">
+            <div class="manga-title" id="STICK_MAN_STORY">STICK MAN</div>
+        </div>
+        <div onclick="window.location.href='MONKEY_AND_THE_DOG/chapter1.html'">
+            <img src="monkey-dog6.jpg" alt="Manga 3 Cover" class="manga-cover">
+            <div class="manga-title" id="MONKEY_AND_THE_DOG">MONKEY AND THE DOG</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

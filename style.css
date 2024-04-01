@@ -1,0 +1,77 @@
+html {
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    position: relative; /* Add position relative to contain z-index */
+}
+
+header {
+    background: linear-gradient(135deg, #f6d365, #fda085); /* Use gradient for appealing background color */
+    color: #ffffff; /* Change text color to white */
+    text-align: center;
+    padding: 15px 0; /* Increase top and bottom padding for better visual appeal */
+    font-size: 25px; /* Increase font size for the header */
+    font-weight: bold; /* Add bold font weight to make the header stand out */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add shadow for text effect */
+    position: relative; /* Add position relative to define stacking context */
+    z-index: 2; /* Set a higher z-index to ensure header is on top */
+}
+
+.manga {
+    display: flex;
+    justify-content: center; /* Align stories cover at the center */
+    align-items: center;
+    margin-top: 20px;
+}
+
+.manga div {
+    text-align: center;
+    margin: 0 10px; /* Add margin around each cover for spacing */
+    flex: 1; /* Allow covers to adapt seamlessly to different screen sizes */
+}
+
+.manga-cover {
+    width: 100%; /* Make covers responsive to adapt to different screen sizes */
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.manga-cover:hover {
+    transform: scale(1.05);
+}
+
+.manga-title {
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.manga-title:hover {
+    color: #009688;
+}
+
+@media only screen and (max-width: 768px) {
+    .manga {
+        flex-direction: column; /* Stack covers vertically for smaller screens */
+        align-items: center; /* Center align the covers */
+    }
+
+    .manga div {
+        margin: 10px 0; /* Adjust margin for spacing */
+        width: 80%; /* Set width to 80% for better fit on smaller screens */
+    }
+
+    .manga-cover {
+        width: 100%; /* Adjust width to 100% for responsiveness */
+    }
+
+    .manga-title {
+        font-size: 18px; /* Decrease font size for better fit on smaller screens */
+    }
+}
